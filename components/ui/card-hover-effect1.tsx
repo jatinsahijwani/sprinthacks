@@ -27,7 +27,7 @@ export const HoverEffect1 = ({
         <Link
           href={item?.link}
           key={item?.link}
-          className="relative  block p-1 mt-4 h-full w-[45vw]"
+          className="relative  block p-1 mt-4 h-full w-[47vw]"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -49,7 +49,7 @@ export const HoverEffect1 = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
+            <CardTitle className="text-blue-400">{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </Link>
