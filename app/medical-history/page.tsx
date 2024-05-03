@@ -1,21 +1,20 @@
 "use client";
 import { HoverEffect1 } from "@/components/ui/card-hover-effect1";
 import React from "react";
-
 import { DiagnosisForm } from "@/components/component/diagnosis-form";
-
+import MedicalHistoryContract from '../../lib/MedicalHistoryContract';
 
 
 export default function CardHoverEffectDemo() {
   return (
     <div className=" w-full ">
-    <div className="ml-[2vw] grid grid-cols-2">
-      <MedicalHistoryCard />
-      <div>
-      <HoverEffect1 items={projects1} />
-    <DiagnosisForm />
+      <div className="ml-[2vw] grid grid-cols-2">
+          <MedicalHistoryCard />
+          <div>
+            <HoverEffect1 items={projects1} />
+            <DiagnosisForm />
+          </div>
       </div>
-    </div>
     </div>
   );
 }
@@ -33,6 +32,9 @@ const projects1 = [
   import { Separator } from "@/components/ui/separator"
   
   export function MedicalHistoryCard() {
+    
+
+
     return (
       <Card key="1" className="m-[2vw] border-green-600 border-[2px] rounded-xxl h-[42vw]">
         <CardHeader className=" align-middle items-center">
@@ -44,10 +46,6 @@ const projects1 = [
             <div className="border-black">
               <div className="flex items-center gap-2">
                 <h3 className="font-semibold text-white text-2xl">Diabetes</h3>
-                <Button  size="icon" variant="outline">
-                  <FileEditIcon className="h-4 w-4" />
-                  <span className="sr-only ">Edit</span>
-                </Button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -73,10 +71,6 @@ const projects1 = [
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-semibold text-white text-2xl">Asthma</h3>
-                <Button size="icon" variant="outline">
-                  <FileEditIcon className="h-4 w-4" />
-                  <span className="sr-only">Edit</span>
-                </Button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
