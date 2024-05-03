@@ -29,8 +29,8 @@ export function Component() {
       <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950">
         <div className="container mx-auto flex h-14 max-w-6xl items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="#">
-            <TwitterIcon className="h-6 w-6 text-[#1d9bf0]" />
-            <span className="font-bold text-[#1d9bf0]">Twitter</span>
+            
+            <span className="font-bold text-green-500">HealthChain</span>
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <Link
@@ -71,15 +71,13 @@ export function Component() {
               <GaugeIcon className="h-5 w-5" />
               <span className="sr-only">Settings</span>
             </Button>
-            <Button className="rounded-full" size="sm" variant="primary">
-              Tweet
-            </Button>
+          
           </div>
         </div>
       </header>
       <main className="container mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-6 md:grid-cols-[1fr_300px] md:px-6">
-        <div className="space-y-6">
-          <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950 dark:border-gray-800">
+        <div className="space-y-6 grid grid-cols-1">
+          <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950 dark:border-gray-800 ">
             <div className="flex items-center gap-3">
               <Avatar>
                 <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
@@ -90,43 +88,40 @@ export function Component() {
                 placeholder="What's happening?"
               />
               <Button className="rounded-full" size="sm" variant="primary">
-                Tweet
+                Post
               </Button>
             </div>
           </div>
-          <div className="grid gap-4 rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950 md:grid-cols-2 lg:grid-cols-3 dark:border-gray-800">
-            <div className="flex items-start gap-3">
+          <div className="grid gap-4 rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-950 md:grid-cols-2 lg:grid-cols-1 dark:border-gray-800">
+            <div className="flex  gap-3">
               <Avatar>
                 <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="flex-1 space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="font-medium">Shadcn</span>
-                  <span className="text-gray-500 dark:text-gray-400">@shadcn</span>
+                  <span className="font-medium">Dr. Raghu Parmar</span>
+                  <span className="text-gray-500 dark:text-gray-400">Doctor</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <p>
-                  Excited to share that I've just launched my new open-source component library! Check it out and let me
-                  know what you think.
+                  General Physician 
                 </p>
+                
                 <div className="flex items-center gap-2">
+                <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
+                Avg. Price - $500
+                </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <RepeatIcon className="h-5 w-5" />
-                    <span className="sr-only">Retweet</span>
-                  </Button>
+                  
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <HeartIcon className="h-5 w-5" />
                     <span className="sr-only">Like</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
+                  
                 </div>
               </div>
             </div>
@@ -138,27 +133,24 @@ export function Component() {
               <div className="flex-1 space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="font-medium">Jared Palmer</span>
-                  <span className="text-gray-500 dark:text-gray-400">@jaredpalmer</span>
+                  <span className="text-gray-500 dark:text-gray-400">Pharmacist</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <p>Just finished reading the latest book by my favorite author. Highly recommend it!</p>
                 <div className="flex items-center gap-2">
+                <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
+                Avg. Price - $500
+                </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <RepeatIcon className="h-5 w-5" />
-                    <span className="sr-only">Retweet</span>
-                  </Button>
+                  
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <HeartIcon className="h-5 w-5" />
                     <span className="sr-only">Like</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
+                  
                 </div>
               </div>
             </div>
@@ -170,27 +162,24 @@ export function Component() {
               <div className="flex-1 space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="font-medium">Max Leiter</span>
-                  <span className="text-gray-500 dark:text-gray-400">@maxleiter</span>
+                  <span className="text-gray-500 dark:text-gray-400">Insurance Company</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <p>Just deployed my new website using the latest web technologies. Let me know what you think!</p>
                 <div className="flex items-center gap-2">
+                <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
+                Avg. Price - $500
+                </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <RepeatIcon className="h-5 w-5" />
-                    <span className="sr-only">Retweet</span>
-                  </Button>
+                  
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <HeartIcon className="h-5 w-5" />
                     <span className="sr-only">Like</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
+                  
                 </div>
               </div>
             </div>
@@ -202,7 +191,7 @@ export function Component() {
               <div className="flex-1 space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="font-medium">Shu Ding</span>
-                  <span className="text-gray-500 dark:text-gray-400">@shuding_</span>
+                  <span className="text-gray-500 dark:text-gray-400">Doctor</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <p>
@@ -210,22 +199,19 @@ export function Component() {
                   know what you think.
                 </p>
                 <div className="flex items-center gap-2">
+                <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
+                Avg. Price - $500
+                </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <RepeatIcon className="h-5 w-5" />
-                    <span className="sr-only">Retweet</span>
-                  </Button>
+                  
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <HeartIcon className="h-5 w-5" />
                     <span className="sr-only">Like</span>
                   </Button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
-                    <ShareIcon className="h-5 w-5" />
-                    <span className="sr-only">Share</span>
-                  </Button>
+                  
                 </div>
               </div>
             </div>
@@ -234,14 +220,14 @@ export function Component() {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Trends for you</CardTitle>
+              <CardTitle>Doctors</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Trending in United States</p>
-                    <p className="text-base font-medium">Web Development</p>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Heart Specialist</p>
+                    <p className="text-base font-medium">Dr. Ramesh Chandra</p>
                   </div>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <EllipsisVerticalIcon className="h-5 w-5" />
@@ -250,8 +236,8 @@ export function Component() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Trending in United States</p>
-                    <p className="text-base font-medium">Tailwind CSS</p>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">General Physician</p>
+                    <p className="text-base font-medium">Dr. Dinesh Sharma</p>
                   </div>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <EllipsisVerticalIcon className="h-5 w-5" />
@@ -260,8 +246,8 @@ export function Component() {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Trending in United States</p>
-                    <p className="text-base font-medium">React.js</p>
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Dentist</p>
+                    <p className="text-base font-medium">Dr. Rekha Khandelwal</p>
                   </div>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <EllipsisVerticalIcon className="h-5 w-5" />
@@ -273,7 +259,7 @@ export function Component() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Who to follow</CardTitle>
+              <CardTitle>Pharmacist</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -284,12 +270,11 @@ export function Component() {
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     <div className="space-y-1">
-                      <p className="text-base font-medium">Shadcn</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">@shadcn</p>
+                      <p className="text-base font-medium">Rashmi Medicos</p>
                     </div>
                   </div>
                   <Button className="rounded-full" size="sm" variant="primary">
-                    Follow
+                    Order
                   </Button>
                 </div>
                 <div className="flex items-center justify-between">
@@ -299,12 +284,11 @@ export function Component() {
                       <AvatarFallback>JP</AvatarFallback>
                     </Avatar>
                     <div className="space-y-1">
-                      <p className="text-base font-medium">Jared Palmer</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">@jaredpalmer</p>
+                      <p className="text-base font-medium">Indra Medicals</p>
                     </div>
                   </div>
                   <Button className="rounded-full" size="sm" variant="primary">
-                    Follow
+                    Order
                   </Button>
                 </div>
                 <div className="flex items-center justify-between">
@@ -314,12 +298,11 @@ export function Component() {
                       <AvatarFallback>ML</AvatarFallback>
                     </Avatar>
                     <div className="space-y-1">
-                      <p className="text-base font-medium">Max Leiter</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">@maxleiter</p>
+                      <p className="text-base font-medium">Mahesh Medicals</p>
                     </div>
                   </div>
                   <Button className="rounded-full" size="sm" variant="primary">
-                    Follow
+                    Order
                   </Button>
                 </div>
               </div>
