@@ -12,30 +12,30 @@ export function DiagnosisForm() {
     </div>
     <form className=" grid grid-cols-2 gap-4 m-[5vh]">
       <div className="gap-4">
-        <div className=" w-[45vh]">
+        <div className=" w-[45vh] max-w-[45vh]">
           <Label htmlFor="patient-name">Patient Name</Label>
           <Input id="patient-name" placeholder="Enter patient name" required />
         </div>
-        <div className=" w-[45vh] mt-3">
+        <div className=" w-[45vh] mt-3 max-w-[45vh]">
           <Label htmlFor="patient-age">Patient Age</Label>
           <Input id="patient-age" placeholder="Enter patient age" required type="number" />
         </div>
       </div>
-      <div className=" w-[45vh]">
+      <div className=" w-[45vh] max-w-[45vh]">
         <Label htmlFor="diagnosis">Aadhar Number</Label>
         <Input id="aadharNumber" placeholder="Enter Patient's Aadhar Number" required />
       </div>
-      <div className=" w-[45vh]">
+      <div className=" w-[45vh] max-w-[45vh]">
         <Label htmlFor="disease">Disease</Label>
         <Input id="disease" placeholder="Enter disease" required />
       </div>
-      <div className="w-[45vh]">
+      <div className="w-[45vh] max-w-[45vh]">
         <Label htmlFor="medication">Medication</Label>
         <Input id="medication" placeholder="Enter, seperated Medications" required />
       </div>
-      <div className="w-[45vh]">
+      <div className="w-[45vh] max-w-[45vh]">
         <Label htmlFor="pdf-upload">Upload PDF (Optional)</Label>
-        <Input accept="application/pdf" id="pdf-upload" type="file" />
+        <Input accept="application/pdf" id="pdf-upload" type="file"  />
       </div>
 
       <div className="w-[10vw] mt-[4vh] rounded-xxl">
