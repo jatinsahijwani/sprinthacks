@@ -91,7 +91,7 @@ export function Component() {
                 
                 <div className="flex items-center gap-2">
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
-                Avg. Price - $500
+                Avg. Price - $20
                 </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
@@ -117,11 +117,9 @@ export function Component() {
                   <span className="text-gray-500 dark:text-gray-400">Pharmacist</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
-                <p>Just finished reading the latest book by my favorite author. Highly recommend it!</p>
+                <p>Get Home delivery of medicines </p>
                 <div className="flex items-center gap-2">
-                <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
-                Avg. Price - $500
-                </button>
+                
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
@@ -146,7 +144,7 @@ export function Component() {
                   <span className="text-gray-500 dark:text-gray-400">Insurance Company</span>
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
-                <p>Just deployed my new website using the latest web technologies. Let me know what you think!</p>
+                <p>Get Life Insurance! </p>
                 <div className="flex items-center gap-2">
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
                 Avg. Price - $500
@@ -176,12 +174,11 @@ export function Component() {
                   <span className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <p>
-                  Excited to share that I've just launched my new open-source component library! Check it out and let me
-                  know what you think.
+                  Dentist
                 </p>
                 <div className="flex items-center gap-2">
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
-                Avg. Price - $500
+                Avg. Price - $25
                 </button>
                   <Button className="rounded-full" size="icon" variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />

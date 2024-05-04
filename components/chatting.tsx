@@ -9,17 +9,19 @@ export function Chatting() {
         <div className="flex items-center gap-4">
           <Avatar className="rounded-full">
             <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
-            <AvatarFallback>JP</AvatarFallback>
+            <AvatarFallback>RP</AvatarFallback>
           </Avatar>
           <div className="grid gap-1">
             <div className="flex items-center gap-2">
-              <Input
+              <h1
                 className="max-w-[150px] bg-transparent font-medium focus:outline-none text-white"
-                defaultValue="Jared Palmer"
-                type="text"
-              />
+                
+                
+              >
+                Dr. Raghu Parmar </h1>
             </div>
-            <p className="text-sm text-gray-300">@jaredpalmer</p>
+            <p className="text-sm text-gray-300">@dr.Raghu</p>
+            
           </div>
         </div>
       </header>
@@ -28,7 +30,7 @@ export function Chatting() {
           <div className="flex items-end gap-2">
             <Avatar className="rounded-full">
               <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
-              <AvatarFallback>JP</AvatarFallback>
+              <AvatarFallback>RP</AvatarFallback>
             </Avatar>
             <div className="max-w-[75%] rounded-lg bg-gray-600 p-3 text-sm text-white">
               <p>Hey there! How's it going?</p>
@@ -46,7 +48,7 @@ export function Chatting() {
           <div className="flex items-end gap-2">
             <Avatar className="rounded-full">
               <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
-              <AvatarFallback>JP</AvatarFallback>
+              <AvatarFallback>RP</AvatarFallback>
             </Avatar>
             <div className="max-w-[75%] rounded-lg bg-gray-600 p-3 text-sm text-white">
               <p>Awesome, let's catch up later!</p>
@@ -66,12 +68,15 @@ export function Chatting() {
       <div className="bg-black px-4 py-3 text-white">
         <form className="flex items-center justify-center gap-2">
           <Input
-            className="bg-gray-900 text-white flex-1 h-12 rounded-full"
+            className="bg-gray-900 text-white flex-1 h-12 rounded-full w-[55vw]"
             placeholder="Type your message..."
             type="text"
           />
           <Button className="text-gray-500 rounded-md px-2 py-2 flex items-center justify-center">
             <SendIcon className="h-6 w-6" />
+          </Button>
+          <Button className="text-gray-500 rounded-md px-2 py-2 flex items-center justify-center ">
+            Send Medical History
           </Button>
         </form>
       </div>
