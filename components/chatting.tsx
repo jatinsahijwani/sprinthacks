@@ -40,6 +40,7 @@ export function Chatting() {
                 Dr. Raghu Parmar </h1>
             </div>
             <p className="text-sm text-gray-300">@dr.Raghu</p>
+            
           </div>
         </div>
       </header>
@@ -92,6 +93,9 @@ export function Chatting() {
           />
           <Button className="text-gray-500 rounded-md px-2 py-2 flex items-center justify-center">
             <SendIcon className="h-6 w-6" />
+          </Button>
+          <Button className="text-gray-500 rounded-md px-2 py-2 flex items-center justify-center ">
+            Send Medical History
           </Button>
         </form>
       </div>
