@@ -2,15 +2,31 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
+import MedicalHistoryContract from "@/lib/MedicalHistoryContract" 
+import web3 from "@/lib/web3"
+import { useRouter } from "next/navigation"
 
 export function DiagnosisForm() {
-  return (
+  const router = useRouter();
+  const [aadharNumber,setAadharNumber] = useState('');
+  const [disease,setDisease] = useState('');
+  const [medication,setMedication] = useState('');
+  const doctorName = "Dr. John Doe";
+  const currentDate = new Date();
+  const handleSubmit = async() => {
+    const accounts = await web3.eth.getAccounts();
+    const gasEstimate = await MedicalHistoryContract.methods.addMedicalRecord(aadharNumber,disease,[medication],doctorName,currentDate.getTime()).estimateGas({from : accounts[0]});
+    await MedicalHistoryContract.methods.addMedicalRecord(aadharNumber,disease,[medication],doctorName,currentDate.getTime()).send({from : accounts[0], gas: gasEstimate});
+    router.push('/');
+  }
+   return (
     <div className="space-y-6 w-[47vw] border border-gray-600 rounded-xl">
     <div className="space-y-2 text-center m-6">
       <h1 className="text-3xl font-bold text-blue-400" >Patient Diagnosis</h1>
       <p className="text-gray-500 dark:text-gray-400">Upload your patient's diagnosis, disease, and medication.</p>
     </div>
-    <form className=" grid grid-cols-2 gap-4 m-[5vh]">
+    <div className=" grid grid-cols-2 gap-4 m-[5vh]">
       <div className="gap-4">
         <div className=" w-[45vh] max-w-[45vh]">
           <Label htmlFor="patient-name">Patient Name</Label>
@@ -23,15 +39,21 @@ export function DiagnosisForm() {
       </div>
       <div className=" w-[45vh] max-w-[45vh]">
         <Label htmlFor="diagnosis">Aadhar Number</Label>
-        <Input id="aadharNumber" placeholder="Enter Patient's Aadhar Number" required />
+        <Input id="aadharNumber" value={aadharNumber} onChange={(e) => {
+          setAadharNumber(e.target.value);
+        }} placeholder="Enter Patient's Aadhar Number" required />
       </div>
       <div className=" w-[45vh] max-w-[45vh]">
         <Label htmlFor="disease">Disease</Label>
-        <Input id="disease" placeholder="Enter disease" required />
+        <Input id="disease" value={disease} onChange={(e) => {
+          setDisease(e.target.value);
+        }} placeholder="Enter disease" required />
       </div>
       <div className="w-[45vh] max-w-[45vh]">
         <Label htmlFor="medication">Medication</Label>
-        <Input id="medication" placeholder="Enter, seperated Medications" required />
+        <Input id="medication" value={medication} onChange={(e) => {
+          setMedication(e.target.value);
+        }} placeholder="Enter, seperated Medications" required />
       </div>
       <div className="w-[45vh] max-w-[45vh]">
         <Label htmlFor="pdf-upload">Upload PDF (Optional)</Label>
@@ -39,13 +61,13 @@ export function DiagnosisForm() {
       </div>
 
       <div className="w-[10vw] mt-[4vh] rounded-xxl">
-      <Button className=" bg-green-500" type="submit">
+      <Button onClick={handleSubmit} className=" bg-green-500" type="submit">
         Submit
       </Button >
 
       </div>
       
-    </form>
+    </div>
     <div className="text-center m-6">
       </div>
   </div>

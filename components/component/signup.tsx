@@ -20,7 +20,7 @@ export default function Login() {
     const gasEstimate = await AuthContract.methods.register(username,email,password).estimateGas({from: accounts[0]})
     console.log(gasEstimate);
     await AuthContract.methods.register(username,email,password).send({from: accounts[0], gas: gasEstimate});
-    router.push('/login');
+    router.push('/onboarding');
   }
   return (
     <div className="flex min-h-[100dvh] w-full flex-col items-center justify-center bg-gray-100 px-4 py-12 dark:bg-gray-950">
@@ -78,7 +78,7 @@ export default function Login() {
               </div>
               <div className="flex-col items-center justify-between">
                 <span className="text-md flex justify-center items-center pb-4 text-red-500">{error}</span>
-                <Button className="w-full" onClick={handleSubmit}>Sign In</Button>
+                <Button className="w-full" onClick={handleSubmit}>Sign Up</Button>
               </div>
             </div>
           </div>

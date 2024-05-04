@@ -1,6 +1,6 @@
 "use client";
 import { HoverEffect1 } from "@/components/ui/card-hover-effect1";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DiagnosisForm } from "@/components/component/diagnosis-form";
 import MedicalHistoryContract from '../../lib/MedicalHistoryContract';
 
@@ -20,9 +20,9 @@ export default function CardHoverEffectDemo() {
 }
 const projects1 = [
     {
-      title: "Anirudh",
+      title: "Patient Name: Balrma Sharma",
       description:
-        "A technology company that builds economic infrastructure for the internet.",
+        "He has been diagnosed with both asthma and diabetes. His medical history includes regular monitoring of his blood sugar levels and adherence to a strict diet.",
       link: "https://stripe.com",
     },
   ];
@@ -32,8 +32,18 @@ const projects1 = [
   import { Separator } from "@/components/ui/separator"
   
   export function MedicalHistoryCard() {
-    
 
+    const [medicalHistory,setMedicalHistory] = useState([]);
+
+    useEffect(() => {
+
+      let x = async() => {
+        const response = await MedicalHistoryContract.methods.getMedicalRecords("123412341234").call();
+        if(response) setMedicalHistory(response);
+      }
+
+      x();
+    },[])
 
     return (
       <Card key="1" className="m-[2vw] border-green-600 border-[2px] rounded-xxl h-[42vw]">
@@ -42,61 +52,80 @@ const projects1 = [
           <CardDescription>Patient's medical history and prescription details</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1  gap-4">
+          {medicalHistory.length > 0 && <div className="grid grid-cols-1  gap-4">
             <div className="border-black">
               <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-white text-2xl">Diabetes</h3>
-              </div>
+                <h3 className="font-semibold text-white text-2xl">{medicalHistory[0].disease}</h3>
+               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h4 className="font-medium text-yellow-500">Medication</h4>
                   <ul className="list-disc list-inside">
-                    <li>Insulin</li>
+                    <li>{medicalHistory[0].medications}</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium text-yellow-500 ">Prescribed by</h4>
-                  <p>Dr. Smith Johnson</p>
+                  <p>{medicalHistory[0].doctorName}</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Date</h4>
-                  <p>March 12, 2023</p>
+                  <p>April 15, 2023</p>
                 </div>
               </div>
             
             </div>
-          </div>
+          </div>}
           <Separator className="my-4" />
-          <div className="grid grid-cols-1 gap-4">
-            <div>
+          {medicalHistory.length > 1 && <div className="grid grid-cols-1  gap-4">
+            <div className="border-black">
               <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-white text-2xl">Asthma</h3>
-              </div>
+                <h3 className="font-semibold text-white text-2xl">{medicalHistory[1].disease}</h3>
+               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium  text-yellow-500">Medication</h4>
+                  <h4 className="font-medium text-yellow-500">Medication</h4>
                   <ul className="list-disc list-inside">
-                    <li>Albuterol</li>
-                    <li>Inhaled corticosteroids</li>
+                    <li>{medicalHistory[1].medications}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium  text-yellow-500">Prescribed by</h4>
-                  <p>Dr. Michael Brown</p>
+                  <h4 className="font-medium text-yellow-500 ">Prescribed by</h4>
+                  <p>{medicalHistory[1].doctorName}</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Date</h4>
-                  <p>August 20, 2023</p>
+                  <p>March 19, 2012</p>
                 </div>
               </div>
             </div>
-                      </div>
+          </div>}
+          <Separator className="my-4" />
+          { <div className="grid grid-cols-1  gap-4">
+            <div className="border-black">
+              <div className="flex items-center gap-2">
+                <h3 className="font-semibold text-white text-2xl">Hyper-Tension</h3>
+               </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-medium text-yellow-500">Medication</h4>
+                  <ul className="list-disc list-inside">
+                    <li>ACE Inhibitors</li>
+                    <li>Amlodipine</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-yellow-500 ">Prescribed by</h4>
+                  <p>Dr. Ruchika Sharma</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">Date</h4>
+                  <p>October 5, 2003</p>
+                </div>
+              </div>
+            </div>
+          </div>}
         </CardContent>
-        <CardFooter className="mt-[5vh]">
-          <Button className="w-full" variant="outline">
-            View previous reports
-          </Button>
-        </CardFooter>
       </Card>
     )
   }
