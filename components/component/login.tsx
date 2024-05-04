@@ -41,7 +41,7 @@ export default function Login() {
             alt="Healthcare Illustration"
             className="aspect-[5/4] w-full max-w-[500px] rounded-xl object-cover"
             height="400"
-            src="/placeholder.svg"
+            src="/bg.png"
             width="500"
           />
         </div>
