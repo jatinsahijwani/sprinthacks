@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
@@ -5,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
 
 export function Component() {
+  const router = useRouter();
   return (
     <>
       <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950">
@@ -23,21 +26,21 @@ export function Component() {
             </Link>
             <Link
               className="flex items-center gap-2 rounded-full px-4 py-2 font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#"
+              href="/medical-history"
             >
               <HashIcon className="h-5 w-5" />
-              <span>Explore</span>
+              <span>Medical History</span>
             </Link>
             <Link
               className="flex items-center gap-2 rounded-full px-4 py-2 font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#"
+              href="/telemedicine"
             >
               <BellIcon className="h-5 w-5" />
-              <span>Notifications</span>
+              <span>Tele-Medicine</span>
             </Link>
             <Link
               className="flex items-center gap-2 rounded-full px-4 py-2 font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-              href="#"
+              href="/chatting"
             >
               <MailIcon className="h-5 w-5" />
               <span>Messages</span>
@@ -93,7 +96,9 @@ export function Component() {
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
                 Avg. Price - $20
                 </button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
+                  <Button className="rounded-full" size="icon" onClick={() => {
+                    router.push('/chatting');
+                  }} variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
@@ -120,7 +125,9 @@ export function Component() {
                 <p>Get Home delivery of medicines </p>
                 <div className="flex items-center gap-2">
                 
-                  <Button className="rounded-full" size="icon" variant="ghost">
+                <Button className="rounded-full" size="icon" onClick={() => {
+                    router.push('/chatting');
+                  }} variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
@@ -149,13 +156,15 @@ export function Component() {
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
                 Avg. Price - $500
                 </button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
+                <Button className="rounded-full" size="icon" onClick={() => {
+                    router.push('/chatting');
+                  }} variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>
                   
-                  <Button className="rounded-full" size="icon" variant="ghost">
                     <HeartIcon className="h-5 w-5" />
+                  <Button className="rounded-full" size="icon" variant="ghost">
                     <span className="sr-only">Like</span>
                   </Button>
                   
@@ -180,7 +189,9 @@ export function Component() {
                 <button className="bg-gray-900 w-[10vw] h-8 rounded-xl border border-white">
                 Avg. Price - $25
                 </button>
-                  <Button className="rounded-full" size="icon" variant="ghost">
+                <Button className="rounded-full" size="icon" onClick={() => {
+                    router.push('/chatting');
+                  }} variant="ghost">
                     <MessageCircleIcon className="h-5 w-5" />
                     <span className="sr-only">Reply</span>
                   </Button>

@@ -23,7 +23,7 @@ const projects1 = [
       title: "Patient Name: Balrma Sharma",
       description:
         "He has been diagnosed with both asthma and diabetes. His medical history includes regular monitoring of his blood sugar levels and adherence to a strict diet.",
-      link: "https://stripe.com",
+      link: "http://localhost:3000/medical-history",
     },
   ];
 
